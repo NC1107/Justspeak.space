@@ -1,0 +1,37 @@
+    input[type=text] {
+        position: fixed;
+        z-index: 999;
+        width: 35%;
+        border: 5px solid rgb(15, 85, 214);
+        border-radius: 10px;
+        margin: 100px 500px;
+        outline: #0074D9;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: .3s;
+    }
+    
+    input[type="text"],
+    textarea {
+        position: "absolute";
+        z-index: 1;
+        background-color: #0074D9;
+    }
+    
+    input[type=text]:focus {
+        position: "absolute";
+        z-index: 1;
+        border-color: 0074D9;
+        box-shadow: 0 0 8px 0 0074D9;
+    }
+    
+    body {
+        background-color: #001f3f;
+    }
+    
+     ::placeholder {
+        font-size: 75%;
+        color: rgb(0, 54, 102);
+        opacity: 1;
+        font-family: Helvetica;
+    }
