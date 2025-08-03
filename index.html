@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-
-<head class="background">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.3, maximum-scale=0.8, minimum-scale=0.1, user-scalable=yes">
+    <title>JustSpeak.space - Share Your Thoughts</title>
+    <meta name="description" content="A dynamic and interactive public word wall for community engagement and expression">
+    
     <link rel="stylesheet" type="text/css" href="CoderFont.css">
-    <script src="VisualQuotes.js"></script>
-    <meta name="viewport" content="initial-scale=.1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <script src="VisualQuotes.js" defer></script>
 </head>
 
 <body>
-    <form id="form" name="form">
-        <input style="font-size:2vw; position: absolute;" type="text" id="hiddenInput" placeholder="Say Something nice:)">
-    </form>
+    <main>
+        <form id="textForm" role="form" aria-label="Enter your message">
+            <label for="messageInput" class="visually-hidden">Enter your message</label>
+            <input 
+                type="text" 
+                id="messageInput" 
+                name="message"
+                placeholder="Say something nice :)" 
+                aria-describedby="instructions"
+                maxlength="280"
+                required
+            >
+        </form>
+        
+        <div id="instructions" class="sr-only">
+            Zoom out as far as possible for the best experience. Type your message and press Enter to add it to the word wall.
+        </div>
+    </main>
 </body>
-
 </html>

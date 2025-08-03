@@ -1,37 +1,123 @@
-    input[type=text] {
-        position: fixed;
-        z-index: 999;
-        width: 35%;
-        border: 5px solid rgb(15, 85, 214);
-        border-radius: 10px;
-        margin: 100px 500px;
-        outline: #0074D9;
-        padding: 8px;
-        box-sizing: border-box;
-        transition: .3s;
+/* JustSpeak.space Styles */
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    font-family: 'Helvetica', Arial, sans-serif;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Accessibility - Screen reader only content */
+.visually-hidden,
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Main content area */
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Form styles - Fixed positioning detached from viewport scaling */
+#textForm {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: 400px;
+    max-width: 90vw;
+    padding: 0;
+    background: rgba(45, 55, 75, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    border: 2px solid rgba(100, 200, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Input field styles - Fixed size regardless of zoom */
+#messageInput {
+    width: 100%;
+    padding: 18px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    background: transparent;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+#messageInput:focus {
+    background: rgba(100, 200, 255, 0.1);
+    box-shadow: inset 0 0 20px rgba(100, 200, 255, 0.2);
+}
+
+#messageInput::placeholder {
+    color: rgba(200, 220, 255, 0.7);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Responsive design - Maintain fixed sizing */
+@media (max-width: 768px) {
+    #textForm {
+        width: 350px;
+        bottom: 30px;
     }
     
-    input[type="text"],
-    textarea {
-        position: "absolute";
-        z-index: 1;
-        background-color: #0074D9;
+    #messageInput {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #textForm {
+        width: 300px;
+        bottom: 20px;
     }
     
-    input[type=text]:focus {
-        position: "absolute";
-        z-index: 1;
-        border-color: 0074D9;
-        box-shadow: 0 0 8px 0 0074D9;
+    #messageInput {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    #textForm {
+        border-width: 3px;
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    #messageInput {
+        transition: none;
     }
     
     body {
-        background-color: #001f3f;
+        background: #1a1a2e;
     }
-    
-     ::placeholder {
-        font-size: 75%;
-        color: rgb(0, 54, 102);
-        opacity: 1;
-        font-family: Helvetica;
-    }
+}

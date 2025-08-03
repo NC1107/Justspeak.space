@@ -1,14 +1,33 @@
 {
-  "name": "hackathon",
-  "version": "1.0.0",
-  "description": "]",
+  "name": "justspeak-space",
+  "version": "2.0.0",
+  "description": "A dynamic and interactive public word wall for community engagement and expression",
   "main": "VisualQuotes.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx http-server -p 3000 -o",
+    "dev": "npx http-server -p 3000 -o -c-1",
+    "test": "echo \"No tests specified\" && exit 0"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "hackathon",
+    "word-wall",
+    "interactive",
+    "community",
+    "expression",
+    "creative"
+  ],
+  "author": "Nicholas Conn <188623nc@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NC1107/Justspeak.space"
+  },
+  "homepage": "https://github.com/NC1107/Justspeak.space#readme",
   "dependencies": {
     "weird-fonts": "^0.1.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
